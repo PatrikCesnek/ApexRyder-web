@@ -1,0 +1,27 @@
+# AI / agent tooling — never committed
+.claude/
+.claude-flow/
+.swarm/
+.mcp.json
+CLAUDE.md
+claude-flow.config.json
+ruvector.db
+.cursor/
+.windsurf/
+.continue/
+.aider*
+docs/superpowers/scratch/
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Node (defensive — this site has no build step, but tooling may add one later)
+node_modules/
+npm-debug.log*
+
+# Netlify local dev
+.netlify/
