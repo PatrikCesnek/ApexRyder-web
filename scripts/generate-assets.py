@@ -56,19 +56,22 @@ def copy_icon() -> None:
 
 
 def generate_og_image() -> None:
-    riding = Image.open(SCREENSHOTS / "riding.png").convert("RGB")
+    # menu.png (the clean "APEX / Ride" screen), not riding.png — riding.png
+    # is actually a post-crash score summary ("Hit an obstacle"), the wrong
+    # first impression for a social share card.
+    source = Image.open(SCREENSHOTS / "menu.png").convert("RGB")
     target_w, target_h = 1200, 630
     target_ratio = target_w / target_h
-    src_ratio = riding.width / riding.height
+    src_ratio = source.width / source.height
     if src_ratio > target_ratio:
-        new_height = riding.height
+        new_height = source.height
         new_width = int(new_height * target_ratio)
     else:
-        new_width = riding.width
+        new_width = source.width
         new_height = int(new_width / target_ratio)
-    left = (riding.width - new_width) // 2
-    top = (riding.height - new_height) // 2
-    cropped = riding.crop((left, top, left + new_width, top + new_height))
+    left = (source.width - new_width) // 2
+    top = (source.height - new_height) // 2
+    cropped = source.crop((left, top, left + new_width, top + new_height))
     card = cropped.resize((target_w, target_h), Image.LANCZOS).convert("RGBA")
 
     # Bottom gradient scrim so the wordmark/tagline stay legible.
