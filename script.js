@@ -230,7 +230,7 @@ const translations = {
     "support.contact.note": "Aktuální e-mail podpory: pcesnek290@gmail.com",
     "support.gamecenter.title": "Game Center",
     "support.gamecenter.text": "Žebříčky a achievementy používají Apple Game Center. Pokud se skóre nesynchronizuje, ověř, že jsi přihlášen do Game Center v nastavení iOS.",
-    "support.data.title": "historie jízd a nastavení",
+    "support.data.title": "Historie jízd a nastavení",
     "support.data.text": "Tvoje historie jízd, osobní rekordy a nastavení jsou uložené v zařízení.",
     "support.offline.title": "Hraní offline",
     "support.offline.text": "Apex Ryde je plně hratelné offline. Funkce Game Center potřebují připojení k synchronizaci, ale skóre se ukládá lokálně v obou případech.",
