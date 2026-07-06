@@ -195,6 +195,7 @@ img {
 .device-frame img {
   border-radius: 20px;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
