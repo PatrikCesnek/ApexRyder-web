@@ -259,6 +259,102 @@ h2 {
   line-height: 1.55;
 }
 
+.section-sub {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Difficulty tiers — chamfered plates echoing the in-game road-select
+   screen: dark TFT glass, per-tier accent, rising traffic pips. */
+.difficulty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.difficulty-card {
+  --tier: #33c759;
+  position: relative;
+  padding: 22px;
+  background: linear-gradient(180deg, #121826, #05070a);
+  border: 1px solid var(--line);
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.difficulty-card.medium { --tier: #38c8f0; }
+.difficulty-card.hard { --tier: #ff9500; }
+
+.difficulty-card:hover {
+  border-color: var(--tier);
+  box-shadow: 0 0 34px color-mix(in srgb, var(--tier) 25%, transparent);
+}
+
+.difficulty-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.difficulty-code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tier);
+}
+
+.difficulty-pips {
+  display: inline-flex;
+  gap: 3px;
+  align-items: flex-end;
+}
+
+.difficulty-pips i {
+  display: block;
+  width: 7px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.difficulty-pips i:nth-child(1) { height: 5px; }
+.difficulty-pips i:nth-child(2) { height: 7px; }
+.difficulty-pips i:nth-child(3) { height: 9px; }
+.difficulty-pips i:nth-child(4) { height: 11px; }
+.difficulty-pips i:nth-child(5) { height: 13px; }
+
+.difficulty-pips i.on { background: var(--tier); }
+
+.difficulty-card h3 {
+  margin: 14px 0 12px;
+  font-size: 19px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--tier) 55%, transparent);
+}
+
+.difficulty-card p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+.difficulty-traffic {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--tier) 80%, white);
+}
+
+.difficulty-footer {
+  margin: 18px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -412,6 +508,7 @@ summary {
   .split-section,
   .feature-grid,
   .gallery-grid,
+  .difficulty-grid,
   .support-grid {
     grid-template-columns: 1fr;
   }
